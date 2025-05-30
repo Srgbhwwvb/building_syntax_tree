@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from Latex import replace_latex
+from proccess_latex import replace_latex
 
 tokenizer = AutoTokenizer.from_pretrained("DeepPavlov/rubert-base-cased")
 model = AutoModel.from_pretrained("DeepPavlov/rubert-base-cased")
