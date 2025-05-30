@@ -1,10 +1,10 @@
-from Latex import replace_latex
-from Draw import draw_syntax_tree
+from proccess_latex import replace_latex
+from draw_tree import draw_syntax_tree
 import spacy
 from spacy import displacy
 from nltk.tokenize import sent_tokenize
 import nltk
-from DrawEx import print_tree
+from print_expression_tree import print_tree
 #nltk.download('punkt_tab')
 
 examples=[r"Функция $f(x)$ называется непрерывной в точке $a$, если для любого $\varepsilon > 0$ существует $\delta > 0$ такое, что для всех $x$ выполняется условие: если $|x - a| < \delta$, то $|f(x) - f(a)| < \varepsilon$.",
