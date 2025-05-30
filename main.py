@@ -1,5 +1,5 @@
-from Latex import replace_latex
-from Draw import draw_syntax_tree
+from proccess_latex import replace_latex
+from draw_tree import draw_syntax_tree
 import spacy
 from spacy import displacy
 from nltk.tokenize import sent_tokenize
