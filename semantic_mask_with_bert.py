@@ -56,39 +56,6 @@ def get_word_embedding(word):
     return torch.mean(subword_embeddings, dim=0).numpy()
 
 
-
-# def get_word_embeddings(text):
-#     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
-#     outputs = model(**inputs)
-#
-#     words = text.split()
-#     word_embeddings = []
-#     word_ids = inputs.word_ids(batch_index=0)  # Для первого элемента батча
-#
-#     current_word_id = None
-#     embeddings_buffer = []
-#
-#     for i, word_id in enumerate(word_ids):
-#         if word_id is None:  # Пропускаем служебные токены
-#             continue
-#
-#         if word_id != current_word_id:
-#             # Сохраняем предыдущий эмбеддинг (если был)
-#             if embeddings_buffer:
-#                 word_embeddings.append(np.mean(embeddings_buffer, axis=0))
-#                 embeddings_buffer = []
-#             current_word_id = word_id
-#
-#         # Добавляем эмбеддинг субтокена в буфер
-#         embeddings_buffer.append(outputs.last_hidden_state[0, i].detach().numpy())
-#
-#     # Добавляем последнее слово
-#     if embeddings_buffer:
-#         word_embeddings.append(np.mean(embeddings_buffer, axis=0))
-#
-#     return word_embeddings
-
-
 def classify_tokens(emb_operators, sentence_embeddings, words, threshold=0.8):
 
     # Нормализация эмбеддингов
