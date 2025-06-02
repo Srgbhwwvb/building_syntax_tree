@@ -255,23 +255,6 @@ def give_semantic(nlp, sent, semantic = [], temp_str = ''):
     return semantic, temp_str
 
 
-def proccess_forall(text, semantic, i):
-    """
-    forall __ exist __         ->    forall[ __, exist[...
-    forall __ выполняется __   ->   forall[__, __]
-    forall __ такое что/для которого выполняется __  ->  forall[and[__, __], __
-    """
-    pass
-
-
-def proccess_exist(text, semantic, i):
-    """
-    exist __         ->     exist[...
-    exist __ выполняется __   ->   exist[__, __]
-    exist __ такое что/для которого выполняется __  ->  exist[and[__, __], __
-    """
-    pass
-
 def no_operators(semantic):
     for s in semantic:
         if s.Type in {'forall_', 'exist_', 'is_', 'iff_', 'and_'}:
@@ -485,8 +468,3 @@ def proccess(a_text, tree = [], draw = 0):
 
 
 tree = proccess(examples)
-# print(tree[0])
-# print_tree(tree[0])
-#print(if_so("Если функция $f(x)$ непрерывна на интервале $[a, b]$ и дифференцируема на интервале $(a, b)$, то существует точка $c \in (a, b)$ такая, что: $(f'(c) = \frac{f(b) - f(a)}{b - a}$"))
-# print(nlp('функция +1 непрерывна на интервале +2 и дифференцируема на интервале +3.'))
-# print(nlp('существует точка +4 такая, что: +5.'))
